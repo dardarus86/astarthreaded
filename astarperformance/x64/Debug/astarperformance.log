@@ -1,0 +1,3 @@
+﻿  1000search.cpp
+F:\C++\CMP202\threadedastar\astarperformance\astarperformance\1000search.cpp(336,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  astarperformance.vcxproj -> F:\C++\CMP202\threadedastar\astarperformance\x64\Debug\astarperformance.exe
