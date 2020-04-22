@@ -1,5 +1,8 @@
-﻿  1000threadastar.cpp
-F:\C++\CMP202\threadedastar\astarperformance\astarperformance\1000threadastar.cpp(270,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  1000threadonX.cpp
+F:\C++\CMP202\astarthreaded\astarperformance\1000threadonX.cpp(409,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating code
-LINK : fatal error C1354: error accessing previous object file F:\C++\CMP202\threadedastar\astarperformance\x64\Release\astarperformance.iobj (corrupted symbol table)
-LINK : fatal error LNK1257: code generation failed
+  1 of 349 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  astarperformance.vcxproj -> F:\C++\CMP202\astarthreaded\x64\Release\astarperformance.exe

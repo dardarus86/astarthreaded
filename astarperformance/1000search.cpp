@@ -12,8 +12,8 @@
 #include <chrono>
 #include <fstream>
 
-const int width = 1000;
-const int height = 1000;
+const int width = 5000;
+const int height = 5000;
 bool foundExit = false;
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
@@ -282,7 +282,7 @@ int main()
 		the_clock::time_point start = the_clock::now();
 		initialiseGrid(gridArray);
 		the_clock::time_point end = the_clock::now();
-		pathfind(xStart, yStart, xEnd, yEnd);
+		//pathfind(xStart, yStart, xEnd, yEnd);
 
 		foundExit = false;
 		auto time_taken = duration_cast<milliseconds>(end - start).count();

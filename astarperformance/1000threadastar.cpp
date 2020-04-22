@@ -13,8 +13,8 @@
 #include <mutex>
 
 const int width = 1000;
-const int height = 1000;
-const int numOfThreads = 25;
+const int height = 50000;
+const int numOfThreads = 625;
 bool foundExit = false;
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
@@ -103,23 +103,20 @@ void SingleGridThread(int lowX, int highX, int lowY, int highY)
 		}
 	}
 
-
 	for (int i = 0; i < (highY - lowY) * (highX - lowX) / 6; i++)
 	{
-		gridArray[rand() % 1 + ((highY - lowY) - 1)][rand() % 1 + ((highX - lowX) - 1)].closed = true;
+		gridArray[rand() % 1 + ((highX - lowX) - 1)][rand() % 1 + ((highY - lowY) - 1)].closed = true;
 	}
-
-
 }
 
 void initialiseGrid()
 {
 	int threadnum = 0;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 25; i++)
 	{
-		for (int j = 0; j < 5; j++)
+		for (int j = 0; j < 25; j++)
 		{
-			threads[threadnum++] = std::thread(SingleGridThread, i * 200, (i + 1) * 200, j * 200, (j + 1) * 200);
+			threads[threadnum++] = std::thread(SingleGridThread, i * 40, (i + 1) * 40, j * 2000, (j + 1) * 2000);
 		}
 	}
 
@@ -328,7 +325,7 @@ int main()
 
 	srand(time(NULL));
 	int numOfSearches = 0;
-	int totaliterations = 100;
+	int totaliterations = 5;
 	float averagems = 0;
 
 	std::ofstream my_file("aStar1000thread.csv");
@@ -343,7 +340,7 @@ int main()
 		the_clock::time_point start = the_clock::now();
 		initialiseGrid();
 		the_clock::time_point end = the_clock::now();
-		pathfind(xStart, yStart, xEnd, yEnd);
+		//pathfind(xStart, yStart, xEnd, yEnd);
 
 		foundExit = false;
 		auto time_taken = duration_cast<milliseconds>(end - start).count();
